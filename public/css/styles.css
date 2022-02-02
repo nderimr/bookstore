@@ -1,0 +1,17 @@
+.button{
+	margin-left: 10px;
+}
+.addNew{
+	margin-bottom: 10px;
+}
+.centeraligned {
+text-align:center;
+}
+.invalidData{
+	color:red;
+}
+.notes{
+	font-family: cursive;
+	font-size: small;
+	font-style: !important;
+}
