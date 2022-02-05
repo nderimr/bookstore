@@ -69,9 +69,7 @@
                 tr.append(chb_td)
                 editDelBtn_td = $('<td/>')
                 editDelBtn_td.append(createEditBookBtn(displayRecords[i].id));
-                console.log("testing");
                 editDelBtn_td.append(createDeleteBookBtn(displayRecords[i].id,i));
-
                 tr.append(editDelBtn_td);
   
                 $('#books').append(tr);
@@ -112,12 +110,7 @@
             dataType: 'json',
             type:'delete',
             success: function (data) {
-              getAllBooks();
-               $("#tr_id_"+tr_id).remove();
-               //get all books
-               deleted_ids.push(tr_id);
-                for(i=0;i<deleted_ids.length; i++)
-                console.log(deleted_ids[i]);
+          		getAllBooks(); 
             }
                 
             });///end ajax call 

@@ -22,7 +22,6 @@ $(document).ready(function(){
  		$("#publishYearEnd").change(function() {
 			//var dateFormat = require('dateformat'); 
   			date = new Date($("#publishYearEnd").val());
-  			console.log($(this).val());
 		  	$("#publishYearEnd").val(formatDate(date));
 		});
 
@@ -77,7 +76,7 @@ $(document).ready(function(){
 
  
  //format the date in YYYY-MM--DD
-function formatDate(_date) {
+function formatDate(date) {
     var d = new Date(date),
         month = '' + (d.getMonth() + 1),
         day = '' + d.getDate(),
