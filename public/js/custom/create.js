@@ -1,10 +1,7 @@
 $(document).ready(function(){
     	 
-    	 var $j = jQuery.noConflict();
-    	 let currentURL = $(location).attr('href');
-         pos = currentURL.lastIndexOf('/');
-         id_str = currentURL.substr(pos+1);
-         id = parseInt(id_str);
+    	 //var $j = jQuery.noConflict();
+    	 
  	}); /// end document.ready 
 	
     $(function() {
@@ -18,7 +15,6 @@ $(document).ready(function(){
 
      
  		$("#publishYearBegin").change(function() {
- 			console.log('try');
   			date = new Date($("#publishYearBegin").val());
 		  	$("#publishYearBegin").val(formatDate(date));
 		});
@@ -32,11 +28,13 @@ $(document).ready(function(){
 
 	function createBook()
      {
+     		let currentURL = $(location).attr('href');
+         	pos = currentURL.lastIndexOf('/');
+         	id_str = currentURL.substr(pos+1);
+         	id = parseInt(id_str);
      	    bestseller = $('#bestseller').prop('checked')?1:0;
-            //console.log(typeof $('#publishYearBegin').val()); return;
             beginDate = new Date($('#publishYearBegin').val());
             endDate = new Date($('#publishYearEnd').val());
-            
             isRange = beginDate<endDate;
             
             if($('#publishYearBegin').val().length ==0)

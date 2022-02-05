@@ -102,9 +102,7 @@ $(document).ready(function(){
 		});
 
  		$("#publishYearEnd").change(function() {
-			//var dateFormat = require('dateformat'); 
   			date = new Date($("#publishYearEnd").val());
-  			console.log(date);
 		  	$("#publishYearEnd").val(formatDate(date));
 		});
  		

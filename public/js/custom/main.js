@@ -7,8 +7,14 @@
         totalPages = 0;
         var deleted_ids = [];
         
-        function getAllBooks(){ 
         
+        
+        $(document).ready(function(){
+     		getAllBooks(); 
+        }); ///end document.ready 
+        
+        //get all the books from database 
+        function getAllBooks(){ 
         $.ajax({
         url: "api/books",
         async: true,
@@ -20,14 +26,7 @@
             apply_pagination(); 
             }
         }); 
-        }//end getAllBooks
-        
-        $(document).ready(function(){
-             
-        //get all the books from database 
-         getAllBooks(); 
-        }); ///end document.ready 
-     
+        }
 
         function createCheckbox(id,value)
         {
@@ -43,8 +42,7 @@
 
             
         function createEditBookBtn(id){
-        	console.log('Edit buuton called');
-            var $btnEdit = $('<input type="button" value="Edit"  class="btn btn-secondary button"  onclick=location.href="editBook/'+id+'" />');
+           	var $btnEdit = $('<input type="button" value="Edit"  class="btn btn-secondary button"  onclick=location.href="editBook/'+id+'" />');
             return $btnEdit;
         }
 
@@ -61,11 +59,6 @@
             $('#books').html('');
             for (var i = 0; i < displayRecords.length; i++) 
             {   
-                // if(deleted_ids.includes(i))
-                // {
-                //     console.log("deleted");
-                //     continue;
-                // }
                 tr = $('<tr/>');
                 tr.prop("id","tr_id_"+i);
                 tr.append('<td>'+displayRecords[i].name+'</td>');

@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $faker = Faker::create(); 
-        for($i=1;$i<3;$i++)
+        for($i=1;$i<35;$i++)
         {
             DB::table('books')->insert([
                 'name' => $faker->realText(30,3),

@@ -19,5 +19,4 @@ Route::get('/', function () {
 
 Route::get('/editBook/{id}',[BookController::class,'edit']);
 Route::get('/create',[BookController::class,'create']);
-// Route::get('/editBook','BookController@edit');
-//Route::resource('book',[BookController::class]);
+
